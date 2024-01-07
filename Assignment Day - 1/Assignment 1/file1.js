@@ -67,7 +67,7 @@ console.log("Result of adding numbers:", result);
 // ASYNC-AWAIT FUNCTIONS
 async function fetchData() {
     try {
-        let response = await fetch('https://www.kaartech.com/');
+        let response = await fetch('https://my-json-server.typicode.com/yogeshwari-E/fakeAPI/posts');
         let data = await response.json();
         console.log("Fetched data:", data);
     } catch (error) {
