@@ -76,6 +76,11 @@ app.delete('/deleteStudentByID/:id', (req, res) => {
 app.put('/updateStudentByID/:id', (req, res) => {
     const studentId = parseInt(req.params.id);
     const updatedFields = req.body;
+    if (!validateObjects(updatedFields)) {
+        //exits if in case of invalid input
+        return res.status(400).json({ error: 'Invalid student details' });
+
+    }
 
     // Find the index of the student with the given ID
     const index = studentsArray.findIndex(student => student.id === studentId);
@@ -98,6 +103,30 @@ app.put('/updateStudentByID/:id', (req, res) => {
     }
 });
 
+function validateObjects(student){
+    const reference1 = {
+        "name" : "string",
+        "maths" : "number",
+        "science" : "number",
+        "english" : "number",
+        "computer" : "number"
+    }
+    for ( const field in student ){
+        if(!reference1.hasOwnProperty(field)){
+            return false;
+        }
+        
+    let expectedType = reference1[field]
+    let actualtype = typeof student[field]
+
+    if ( expectedType !== actualtype ){
+        return false
+    }
+
+    }
+    return true;
+}
+
 // Validate the student structure
 function validateStudent(student) {
     return (
@@ -113,3 +142,5 @@ function validateStudent(student) {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+//string
