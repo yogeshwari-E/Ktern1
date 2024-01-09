@@ -1,0 +1,14 @@
+{
+  "name": "assignment-1",
+  "version": "1.0.0",
+  "description": "express js",
+  "main": "file2.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node file1.js",
+    "dev" : "nodemon file1.js"
+  },
+  "author": "yogi",
+  "license": "ISC"
+}
