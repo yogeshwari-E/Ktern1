@@ -25,7 +25,6 @@ module.exports.insertStudent = async (dbURL, dbName, data) => {
   return result;
 };
 
-
 module.exports.getAllStudents = async (dbURL, dbName) => {
   const client = await MongoClient.connect(dbURL);
   const dbo = client.db(dbName);

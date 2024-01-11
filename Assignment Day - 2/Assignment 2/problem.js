@@ -1,4 +1,4 @@
-const Number_array = [ 1, 2, 3, 4, 5]
+const Number_array = [ 1, 2, 3, 0, 5]
 let Product;
 
 function getProduct( Number_array, index ){
@@ -14,7 +14,7 @@ function getProduct( Number_array, index ){
       // console.log(Product)
   }
 
-  // console.log(Product)
+  // console. log(Product)
   return Product
   
 }
@@ -29,7 +29,7 @@ for(let i = 0; i < Number_array.length; i++) {
 
   value = (getProduct(Number_array, i))
   Output_array.push(value);
-  console.log(value);
+  // console.log(value);
 
 }
 
